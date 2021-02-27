@@ -33,7 +33,6 @@ public final class DisableSpawners extends JavaPlugin implements Listener {
     @EventHandler
     public void onSpawn(SpawnerSpawnEvent spawnerSpawnEvent) {
         reloadConfig();
-        getConfig().getStringList("worlds").forEach(Bukkit::broadcastMessage);
         if (getConfig().getStringList("worlds").contains(spawnerSpawnEvent.getLocation().getWorld().getName())) {
             spawnerSpawnEvent.setCancelled(true);
 
@@ -41,19 +40,5 @@ public final class DisableSpawners extends JavaPlugin implements Listener {
 
     }
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if (command.getName().equalsIgnoreCase("disablespawnerreload")) {
-            if (sender.isOp()) {
-                sender.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "DS" + ChatColor.GOLD + "]"+  ChatColor.RESET + " Reloaded");
-
-            } else if (sender.hasPermission("disablespawners.reload")) {
-                sender.sendMessage(ChatColor.GOLD + "[" + ChatColor.RED + "DS" + ChatColor.GOLD + "]"+  ChatColor.RESET + " Reloaded");
-
-            } else sender.sendMessage(ChatColor.RED + "You don't have permission to execute this command!");
-        }
-
-        return true;
-    }
 }
