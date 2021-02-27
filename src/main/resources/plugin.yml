@@ -1,4 +1,4 @@
-name: Disable Spawners
+name: DisableSpawners
 version: ${project.version}
 main: com.auster.disablespawners.DisableSpawners
 api-version: 1.16
