@@ -1,0 +1,16 @@
+name: Disable Spawners
+version: ${project.version}
+main: com.auster.disablespawners.DisableSpawners
+api-version: 1.16
+prefix: DS
+authors: [ Austerzockt ]
+description: Disables all Spawners in the specified worlds
+permissions:
+  disablespawners.reload:
+    default: op
+commands:
+  disablespawnerreload:
+    permission: disablespawners.reload
+    aliases:
+      - dsr
+
